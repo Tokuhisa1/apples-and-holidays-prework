@@ -50,6 +50,16 @@ def all_winter_holiday_supplies(holiday_hash)
   holiday_hash[:winter].values.flatten
 end
 
+def list_items(array)
+  string = ''
+  counter = 0
+  while counter < array.length
+    string += counter < array.length - 1 ? array[counter] + ", " : array[counter]
+    counter += 1
+  end
+  string
+end
+
 def all_supplies_in_holidays(holiday_hash)
   # Iterate through holiday_hash and print items such
   # that your readout resembles:
@@ -59,6 +69,12 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
+  holiday_hash.each do |season, holiday|
+    puts season[0].upcase + season[1, season.length-1] + ":"
+    holiday_hash[season].each do |day, items|
+      puts "\t" + day[0].upcase + day[1, day.length-1] + ": " + list_items(items)
+    end
+  end
 end
 
 def all_holidays_with_bbq(holiday_hash)
