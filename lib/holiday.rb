@@ -72,7 +72,7 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, holiday|
     puts season[0].upcase + season[1, season.length-1] + ":"
     holiday_hash[season].each do |day, items|
-      puts "\t" + day[0].upcase + day[1, day.length-1] + ": " + list_items(items)
+      puts "  " + day[0].upcase + day[1, day.length-1] + ": " + list_items(items)
     end
   end
 end
