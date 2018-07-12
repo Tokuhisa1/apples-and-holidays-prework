@@ -51,7 +51,8 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
-  # Iterate through holiday_hash and print items such that your readout resembles:
+  # Iterate through holiday_hash and print items such
+  # that your readout resembles:
   # Winter:
   #   Christmas: Lights, Wreath
   #   New Years: Party Hats
@@ -61,7 +62,7 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
-  # return an array of holiday names (as symbols) where supply lists
-  # include the string "BBQ"
+  # Return an array of holiday names (as symbols)
+  # where supply lists include the string "BBQ"
 
 end
