@@ -50,8 +50,15 @@ def all_winter_holiday_supplies(holiday_hash)
   holiday_hash[:winter].values.flatten
 end
 
+def fix_name(symbol)
+  name = ""
+  words = []
+  symbol.to_s.split("_").each { |word| words.push(word.capitalize) }
+  name = words.join(" ")
+end
+
 def list_items(array)
-  string = ''
+  string = ""
   counter = 0
   while counter < array.length
     string += counter < array.length - 1 ? array[counter] + ", " : array[counter]
@@ -72,7 +79,7 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, holiday|
     puts season[0].upcase + season[1, season.length-1] + ":"
     holiday_hash[season].each do |day, items|
-      puts "  " + day[0].upcase + day[1, day.length-1] + ": " + list_items(items)
+      puts "  " + fix_name(day) + ": " + list_items(items)
     end
   end
 end
